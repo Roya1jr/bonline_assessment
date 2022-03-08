@@ -17,6 +17,7 @@ createApp(App)
       warning: "#ffc200",
       gray: "#babfc2",
       dark: "#34495e",
+      background: "#f4f8fa",
 
       // Custom colors
       yellow: "#FFD013",
