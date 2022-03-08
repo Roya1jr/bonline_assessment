@@ -1,15 +1,11 @@
-<template>
-  <Header />
-</template>
+<template></template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Header from "@/components/Header.vue"; // @ is an alias to /src
+import Sidebar from "@/components/SideBar.vue";
 
 export default defineComponent({
   name: "Home",
-  components: {
-    Header,
-  },
+  components: { Sidebar },
 });
 </script>

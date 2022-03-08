@@ -7,6 +7,7 @@
       <va-navbar-item>Right</va-navbar-item>
     </template>
   </va-navbar>
+  <va-divider />
 </template>
 
 
