@@ -1,5 +1,5 @@
  <template>
-  <va-navbar color="background">
+  <va-navbar color="#FFFFFF">
     <template #left>
       <img src="../assets/Logo.png" alt="" />
     </template>
@@ -11,15 +11,11 @@
 </template>
 
 
-<script>
-export default {
-  name: "Header",
-};
+<script lang="ts" setup>
 </script>
 
 <style scoped>
 img {
   width: 60%;
-  height: 100%;
 }
 </style>

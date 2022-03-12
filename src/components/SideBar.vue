@@ -1,30 +1,35 @@
 <template>
-  <div style="height: 13rem; border: 2px solid var(--va-primary)">
-    <va-sidebar textColor="dark">
-      <va-sidebar-item>
-        <va-sidebar-item-content>
-          <va-icon name="dashboard" />
-          <!-- User can hide item with css if he wants -->
-          <va-sidebar-item-title> Dashboard </va-sidebar-item-title>
-        </va-sidebar-item-content>
-      </va-sidebar-item>
+  <div style="height: 100%; background: b_blue; padding: 0em 1em 1em 1em">
+    <va-sidebar color="b_white" minimizedWidth="1em" textColor="dark">
+      <div class="side-item">
+        <va-sidebar-item active-color="b_blue" active>
+          <va-sidebar-item-content>
+            <va-icon name="home" />
+            <va-sidebar-item-title> Home </va-sidebar-item-title>
+          </va-sidebar-item-content>
+        </va-sidebar-item>
+      </div>
 
-      <va-sidebar-item active>
-        <va-sidebar-item-content>
-          <va-icon name="room" />
-          <va-sidebar-item-title> Sidebar demo </va-sidebar-item-title>
-        </va-sidebar-item-content>
-      </va-sidebar-item>
+      <div class="side-item">
+        <va-sidebar-item active-color="b_blue">
+          <va-sidebar-item-content>
+            <va-icon name="payment" />
+            <va-sidebar-item-title> Billing </va-sidebar-item-title>
+          </va-sidebar-item-content>
+        </va-sidebar-item>
+      </div>
     </va-sidebar>
   </div>
 </template>
 
 
-<script>
-export default {
-  name: "Sidebar",
-};
+<script lang="ts" setup>
 </script>
 
-<style>
+
+<style scoped>
+.side-item {
+  border-radius: 10px;
+  overflow: hidden;
+}
 </style>

@@ -20,14 +20,15 @@ createApp(App)
       background: "#f4f8fa",
 
       // Custom colors
-      yellow: "#FFD013",
-      salmon: "#EE405B",
-      pink: "#DC00E0",
-      purple: "#7771FF",
-      blue: "1F8CEB",
-      darkblue: "#000A70",
-      green: "#19D5b2",
-      grey: "#394455",
+      b_yellow: "#FFD013",
+      b_salmon: "#EE405B",
+      b_pink: "#DC00E0",
+      b_purple: "#7771FF",
+      b_blue: "#1F8CEB",
+      b_darkblue: "#000A70",
+      b_green: "#19D5b2",
+      b_grey: "#394455",
+      b_white: "#FFFFFF",
     },
   })
   .mount("#app");
