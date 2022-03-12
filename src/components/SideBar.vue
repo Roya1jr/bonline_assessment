@@ -1,6 +1,11 @@
 <template>
-  <div style="height: 100%; background: b_blue; padding: 0em 1em 1em 1em">
-    <va-sidebar color="b_white" minimizedWidth="1em" textColor="dark">
+  <div class="side-bar">
+    <va-sidebar
+      color="b_white"
+      minimizedWidth="1em"
+      textColor="dark"
+      width="15em"
+    >
       <div class="side-item">
         <va-sidebar-item active-color="b_blue" active>
           <va-sidebar-item-content>
@@ -31,5 +36,10 @@
 .side-item {
   border-radius: 10px;
   overflow: hidden;
+}
+.side-bar {
+  height: 100%;
+  padding: 0em 1em 1em 1em;
+  display: inline-block;
 }
 </style>
