@@ -1,16 +1,36 @@
 <template>
   <div class="grid-container">
-    <component :is="true ? SideBar : Tabs" />
+    <div class="side-bar">
+      <component :is="true ? SideBar : Tabs" />
+    </div>
     <div class="content">
       <div class="title-text">
         <div class="display-2">Billing</div>
         <br />
         <div>Overview of your accounts</div>
+        <va-divider />
       </div>
-      <div class="item3">Cards</div>
-      <div class="item4">Details</div>
-      <div class="item5">Products</div>
-      <div class="item6">History</div>
+
+      <div class="accounts">
+        <AccountCard />
+        <AccountCard />
+      </div>
+
+      <div class="details">
+        <div class="payment">
+          <PaymentDetails />
+        </div>
+        <div class="products">
+          <va-sidebar-item-content>
+            <va-card>
+              <va-card-title>Title</va-card-title>
+              <va-card-content>Lorem ipsum dolor sit amet,</va-card-content>
+            </va-card>
+          </va-sidebar-item-content>
+        </div>
+      </div>
+
+      <div class="billing-history">History</div>
     </div>
   </div>
 </template>
@@ -18,7 +38,8 @@
 <script lang="ts" setup>
 import SideBar from "@/components/SideBar.vue";
 import Tabs from "@/components/Tabs.vue";
-
+import AccountCard from "@/components/AccountCard.vue";
+import PaymentDetails from "@/components/PaymentDetails.vue";
 let width: number = window.innerWidth;
 let height: number = window.innerHeight;
 
@@ -37,11 +58,30 @@ window.addEventListener("resize", reportWindow);
 }
 .grid-container {
   display: grid;
-  grid-template-columns: auto 1fr 6fr;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 1fr 2fr 4fr 4fr;
+  width: 100%;
+  border-left: 1px solid;
+  border-color: var(--va-b_grey);
+  row-gap: 0.5em;
 }
 .title-text {
   color: var(--va-b_black);
   margin-top: 1em;
   margin-left: 2em;
+}
+.accounts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  background-color: var(--va-b_offwhite);
+}
+.details {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background-color: var(--va-b_offwhite);
 }
 </style>

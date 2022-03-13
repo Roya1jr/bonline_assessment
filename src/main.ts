@@ -29,6 +29,7 @@ createApp(App)
       b_green: "#19D5b2",
       b_grey: "#394455",
       b_white: "#FFFFFF",
+      b_offwhite: "#f7f8fa",
     },
   })
   .mount("#app");
