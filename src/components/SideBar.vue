@@ -6,22 +6,23 @@
       textColor="dark"
       width="15em"
     >
-      <div class="side-item">
-        <va-sidebar-item active-color="b_blue" active>
-          <va-sidebar-item-content>
-            <va-icon name="home" />
-            <va-sidebar-item-title> Home </va-sidebar-item-title>
-          </va-sidebar-item-content>
-        </va-sidebar-item>
-      </div>
-
-      <div class="side-item">
-        <va-sidebar-item active-color="b_blue">
-          <va-sidebar-item-content>
-            <va-icon name="payment" />
-            <va-sidebar-item-title> Billing </va-sidebar-item-title>
-          </va-sidebar-item-content>
-        </va-sidebar-item>
+      <div class="side-group">
+        <div class="side-item">
+          <va-sidebar-item active-color="b_blue" active>
+            <va-sidebar-item-content>
+              <va-icon name="home" />
+              <va-sidebar-item-title> Home </va-sidebar-item-title>
+            </va-sidebar-item-content>
+          </va-sidebar-item>
+        </div>
+        <div class="side-item">
+          <va-sidebar-item active-color="b_blue">
+            <va-sidebar-item-content>
+              <va-icon name="payment" />
+              <va-sidebar-item-title> Billing </va-sidebar-item-title>
+            </va-sidebar-item-content>
+          </va-sidebar-item>
+        </div>
       </div>
     </va-sidebar>
   </div>
@@ -33,13 +34,20 @@
 
 
 <style scoped>
+.side-bar {
+  height: 100vh;
+  padding: 0em 1em 1em 1em;
+  display: inline-block;
+  border-right: 1px solid #394455;
+}
+
 .side-item {
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 0.5em;
 }
-.side-bar {
-  height: 100%;
-  padding: 0em 1em 1em 1em;
-  display: inline-block;
+
+.side-group {
+  margin-top: 1em;
 }
 </style>

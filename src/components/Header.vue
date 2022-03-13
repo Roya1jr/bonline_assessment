@@ -17,10 +17,16 @@
         <div class="vl"></div>
         <div class="profile">
           <va-avatar src="https://randomuser.me/api/portraits/women/5.jpg" />
-          <va-list-item-label>
-            <h6 class="display-6">Jane Doe</h6>
-            <h7 class="display-8">fake@email.com</h7>
-          </va-list-item-label>
+          <div class="labels">
+            <va-list-item-section>
+              <va-list-item-label>
+                <h1 class="display-6">Jane Doe</h1>
+              </va-list-item-label>
+              <va-list-item-label caption>
+                <h1 class="display-8">Jonjoe@gmail.com</h1>
+              </va-list-item-label>
+            </va-list-item-section>
+          </div>
         </div>
 
         <va-button-dropdown flat class="ml-2" color="b_blue">
@@ -43,10 +49,11 @@ img {
 
 .nav {
   display: flex;
-  max-height: 4em;
-  border-bottom: 1px solid #394455;
+  flex-direction: row;
   overflow: hidden;
-  margin-bottom: 0.5em;
+  min-width: 100%;
+  max-height: 4.5em;
+  border-bottom: 1px solid #394455;
 }
 
 .vl {
@@ -56,13 +63,20 @@ img {
 }
 
 .right {
+  width: -90%;
   display: flex;
   margin-right: 3em;
-  margin-left: 70%;
+  margin-left: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
+
 .profile {
   display: flex;
   margin-right: 2em;
   justify-content: space-between;
+}
+.labels {
+  margin-left: 0.5em;
 }
 </style>
