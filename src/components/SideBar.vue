@@ -38,7 +38,8 @@
   height: 100vh;
   padding: 0em 1em 1em 1em;
   display: inline-block;
-  border-right: 1px solid #394455;
+  border-right: 1px solid;
+  border-color: var(--va-b_grey);
 }
 
 .side-item {

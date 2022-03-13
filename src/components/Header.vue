@@ -53,11 +53,13 @@ img {
   overflow: hidden;
   min-width: 100%;
   max-height: 4.5em;
-  border-bottom: 1px solid #394455;
+  border-bottom: 1px solid;
+  border-color: var(--va-b_grey);
 }
 
 .vl {
-  border-left: 2px dotted #394455;
+  border-left: 2px dotted;
+  border-color: var(--va-b_grey);
   margin-left: 2em;
   margin-right: 2em;
 }
