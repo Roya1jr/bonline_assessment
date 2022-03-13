@@ -21,16 +21,13 @@
           <PaymentDetails />
         </div>
         <div class="products">
-          <va-sidebar-item-content>
-            <va-card>
-              <va-card-title>Title</va-card-title>
-              <va-card-content>Lorem ipsum dolor sit amet,</va-card-content>
-            </va-card>
-          </va-sidebar-item-content>
+          <ProductDetails />
         </div>
       </div>
 
-      <div class="billing-history">History</div>
+      <div class="billing-history">
+        <BillingHistory />
+      </div>
     </div>
   </div>
 </template>
@@ -40,6 +37,9 @@ import SideBar from "@/components/SideBar.vue";
 import Tabs from "@/components/Tabs.vue";
 import AccountCard from "@/components/AccountCard.vue";
 import PaymentDetails from "@/components/PaymentDetails.vue";
+import ProductDetails from "@/components/ProductDetails.vue";
+import BillingHistory from "@/components/BillingHistory.vue";
+
 let width: number = window.innerWidth;
 let height: number = window.innerHeight;
 
@@ -67,7 +67,7 @@ window.addEventListener("resize", reportWindow);
   width: 100%;
   border-left: 1px solid;
   border-color: var(--va-b_grey);
-  row-gap: 0.5em;
+  row-gap: 1px;
 }
 .title-text {
   color: var(--va-b_black);
@@ -78,10 +78,12 @@ window.addEventListener("resize", reportWindow);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   background-color: var(--va-b_offwhite);
+  border-bottom: 1px black solid;
+  border-bottom-color: var(--va-b_grey);
 }
 .details {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 3fr 2fr;
   background-color: var(--va-b_offwhite);
 }
 </style>

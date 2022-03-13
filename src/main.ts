@@ -1,3 +1,4 @@
+import { createPinia } from "pinia";
 import { createApp } from "vue";
 import { VuesticPlugin } from "vuestic-ui";
 import "vuestic-ui/dist/vuestic-ui.css";
@@ -6,6 +7,7 @@ import router from "./router";
 
 createApp(App)
   .use(router)
+  .use(createPinia())
   .use(VuesticPlugin, {
     colors: {
       // Default colors

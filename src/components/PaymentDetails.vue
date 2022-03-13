@@ -58,7 +58,6 @@
 .pay-details {
   display: grid;
   grid-template-rows: 1fr 2fr 1fr 1.5fr;
-  padding: 1em;
   position: relative;
 }
 
