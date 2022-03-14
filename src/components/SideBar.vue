@@ -8,7 +8,7 @@
     >
       <div class="side-group">
         <div class="side-item">
-          <va-sidebar-item active-color="b_blue" active>
+          <va-sidebar-item active-color="b_blue">
             <va-sidebar-item-content>
               <va-icon name="home" />
               <va-sidebar-item-title> Home </va-sidebar-item-title>
@@ -16,7 +16,7 @@
           </va-sidebar-item>
         </div>
         <div class="side-item">
-          <va-sidebar-item active-color="b_blue">
+          <va-sidebar-item active-color="b_blue" active>
             <va-sidebar-item-content>
               <va-icon name="payment" />
               <va-sidebar-item-title> Billing </va-sidebar-item-title>

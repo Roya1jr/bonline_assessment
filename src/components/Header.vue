@@ -20,17 +20,20 @@
           <div class="labels">
             <va-list-item-section>
               <va-list-item-label>
-                <h1 class="display-6">Jane Doe</h1>
+                <h1 class="display-6">{{ name }}</h1>
               </va-list-item-label>
               <va-list-item-label caption>
-                <h1 class="display-8">Jonjoe@gmail.com</h1>
+                <h1 class="display-8">{{ email }}</h1>
               </va-list-item-label>
             </va-list-item-section>
           </div>
         </div>
-
         <va-button-dropdown flat class="ml-2" color="b_blue">
-          content
+          <ul v-for="(user, index) in users" :key="index">
+            <li>
+              <va-chip size="small"> {{ user.email_address }} </va-chip>
+            </li>
+          </ul>
         </va-button-dropdown>
       </div>
     </va-app-bar>
@@ -39,6 +42,17 @@
 
 
 <script lang="ts" setup>
+import { dataStore } from "@/store/index";
+import { storeToRefs } from "pinia";
+import { ref } from "vue";
+
+const main = dataStore();
+const { currentUser } = storeToRefs(main);
+
+let name: string =
+  main.currentUser.first_name + " " + main.currentUser.last_name;
+let email = main.currentUser.email_address;
+let users = main.getData();
 </script>
 
 <style scoped>
@@ -46,7 +60,9 @@ img {
   margin-right: -5em;
   width: 100%;
 }
-
+ul {
+  padding: 0.5em;
+}
 .nav {
   display: flex;
   flex-direction: row;

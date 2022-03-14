@@ -3,15 +3,23 @@
     <va-card>
       <va-card-title>
         <div class="display-6">
-          Hello <va-chip size="small">Active</va-chip>
+          {{ accountprops.service }}
+          <va-chip size="small">{{ accountprops.status }}</va-chip>
         </div>
       </va-card-title>
-      <va-card-content>Account ID : 2000159</va-card-content>
+      <va-card-content
+        >Account ID : {{ accountprops.accountId }}</va-card-content
+      >
     </va-card>
   </va-sidebar-item-content>
 </template>
 
 <script lang="ts" setup>
+const accountprops = defineProps({
+  service: String,
+  status: String,
+  accountId: Number,
+});
 </script>
 
 <style>

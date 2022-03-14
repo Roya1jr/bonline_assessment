@@ -1,22 +1,25 @@
 <template>
-  <va-sidebar-item-content>
-    <va-card>
-      <va-card-title>
-        <div class="display-6">My products</div>
-      </va-card-title>
-      <va-card-content>
-        All your products at a glance
-        <va-divider />
-        <div class="product-text">
-          <va-icon name="lightbulb" color="primary" /> To manage your payments
-          <va-divider />
-        </div>
-      </va-card-content>
-    </va-card>
-  </va-sidebar-item-content>
+  <div class="product-text">
+    <va-icon :name="mycon" color="primary" />
+    {{ productprops.kind }} -
+    {{ productprops.pId }}
+    <va-divider />
+  </div>
 </template>
 
 <script lang="ts" setup>
+const productprops = defineProps({
+  kind: String,
+  pId: String,
+});
+let mycon: string;
+if (productprops.kind === "VOIP") {
+  mycon = "phone";
+} else if (productprops.kind === "TELCO") {
+  mycon = "share";
+} else if (productprops.kind === "WEBSITE") {
+  mycon = "computer";
+}
 </script>
 
 <style scoped>

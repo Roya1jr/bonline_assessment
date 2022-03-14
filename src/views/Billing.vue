@@ -11,17 +11,40 @@
         <va-divider />
       </div>
 
-      <div class="accounts">
-        <AccountCard />
-        <AccountCard />
+      <div class="accounts" v-for="(product, index) in products" :key="index">
+        <AccountCard
+          :service="product.product_kind"
+          :status="account"
+          :accountId="accId"
+        />
       </div>
 
       <div class="details">
         <div class="payment">
-          <PaymentDetails />
+          <PaymentDetails
+            :invoice="invoice"
+            :paymentMethod="pmethod"
+            :balance="balance"
+          />
         </div>
         <div class="products">
-          <ProductDetails />
+          <va-sidebar-item-content>
+            <va-card>
+              <va-card-title>
+                <div class="display-6">My products</div>
+              </va-card-title>
+              <va-card-content>
+                All your products at a glance
+                <va-divider />
+                <div v-for="(product, index) in products" :key="index">
+                  <ProductDetails
+                    :kind="product.product_kind"
+                    :pId="product.product_id"
+                  />
+                </div>
+              </va-card-content>
+            </va-card>
+          </va-sidebar-item-content>
         </div>
       </div>
 
@@ -40,16 +63,18 @@ import PaymentDetails from "@/components/PaymentDetails.vue";
 import ProductDetails from "@/components/ProductDetails.vue";
 import BillingHistory from "@/components/BillingHistory.vue";
 
-let width: number = window.innerWidth;
-let height: number = window.innerHeight;
+import { dataStore } from "@/store/index";
+import { storeToRefs } from "pinia";
 
-function reportWindow() {
-  width = window.innerWidth;
-  height = window.innerHeight;
-  console.log("resize");
-}
+const main = dataStore();
+const { currentUser } = storeToRefs(main);
 
-window.addEventListener("resize", reportWindow);
+const products = main.currentUser.products;
+const account = main.currentUser.account_status;
+const accId = main.currentUser.account_id;
+const invoice = main.currentUser.next_invoice_date;
+const balance = main.currentUser.balance;
+const pmethod = main.currentUser.payment_method;
 </script>
 
 <style scoped>

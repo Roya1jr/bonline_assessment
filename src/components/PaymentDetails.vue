@@ -7,11 +7,11 @@
       <va-card-content>
         View details of your next invoice and payment method
         <va-divider />
-        <div class="title">Next invoice:</div>
+        <div class="title">Next invoice: {{ invoice }}</div>
         <div class="info">
           <div class="pay-details">
             <div class="title">Current balance</div>
-            <div class="display-4">$20.00</div>
+            <div class="display-4">£{{ balance }}</div>
             <div class="pay-text">
               <va-icon name="lock" /> This is a secure 256-bit SSL <br />
               encrypted payment. You're safe
@@ -24,7 +24,7 @@
           </div>
 
           <div class="pay-details">
-            <div class="title">Payment Method</div>
+            <div class="title">Payment Method: {{ paymentMethod }}</div>
             <div class="pay-text">
               <va-icon name="lightbulb" color="primary" />
               <span class="cl-text">Guide:</span> To manage your payments
@@ -43,7 +43,13 @@
     </va-card>
   </va-sidebar-item-content>
 </template>
+
 <script lang="ts" setup>
+const payymentprops = defineProps({
+  invoice: String,
+  paymentMethod: String,
+  balance: Number,
+});
 </script>
 
 <style>
